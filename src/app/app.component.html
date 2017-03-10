@@ -1,11 +1,13 @@
  <h1>{{title}}</h1>
  <h2>Tour of Summoners</h2>
-<ul class="list">
+<!--
+  <ul class="list">
   <li *ngFor="let summoner of summonerArray" (click)="onSelect(summoner)">
   <span class="badge">{{summoner.id}}</span>
  botMmEnabled: {{summoner.botMmEnabled}}
   </li> 
 </ul>
+-->
 <summoner-detail [summoner]="selectedSummoner"></summoner-detail>
 
 

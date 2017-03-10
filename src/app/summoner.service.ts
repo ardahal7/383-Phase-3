@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Summoner } from './summoner';
+import { ISummoner } from './summoner';
 
 import { Http, Response } from '@angular/http';
 import { Headers } from '@angular/http';
@@ -12,12 +12,13 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class SummonerService {
-  private summonerUrl = 'https://na.api.pvp.net/api/lol/na/v1.2/champion?api_key=RGAPI-6183b5c3-47f1-48e3-a2da-a0736b7695fb';  /*URL to web API*/
+  
+  private summonerUrl = 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/Scara?api_key=RGAPI-6183b5c3-47f1-48e3-a2da-a0736b7695fb';  /*URL to web API*/
 
   mode = 'Observable';
   constructor(private http: Http) { }
-  summoner: Summoner;
-  getSummoners(): Observable<Summoner> {
+  summoner: ISummoner;
+  getSummoners(): Observable<ISummoner> {
     return  this.http.get(this.summonerUrl).map(this.extractData).catch(this.handleError); 
    
   }
@@ -25,8 +26,7 @@ export class SummonerService {
   private extractData(res: Response) {
 
     let body = res.json();
-    
-    return body.champions || {};
+    return body || {};
     
   }
 

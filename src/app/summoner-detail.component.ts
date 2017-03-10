@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Summoner } from './summoner';
+import { ISummoner } from './summoner';
 
 @Component({
   selector: 'summoner-detail',
@@ -10,6 +10,6 @@ import { Summoner } from './summoner';
 
 export class SummonerDetailComponent {
     @Input()
-    summoner: Summoner;
+    summoner: ISummoner;
     
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Summoner } from './summoner';
+import { ISummoner } from './summoner';
 import { SummonerService } from './summoner.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
   errorMessage : string;
   
   constructor(private summonerService: SummonerService) { }
- public  selectedSummoner: Summoner;
- public summonerArray: Summoner;
+ public  selectedSummoner: ISummoner;
+ public summonerArray: ISummoner;
   title= 'Summoners Details';
 
   ngOnInit(): void {
@@ -41,14 +41,12 @@ export class AppComponent implements OnInit {
                         //   console.log("summoner array");
                         //   console.log(this.summonerArray);
                         })
-                                        
-
                       //  error =>  this.errorMessage = <any>error);
   }
   
 
   
- onSelect(summoner: Summoner): void{
+ onSelect(summoner: ISummoner): void{
    this.selectedSummoner=summoner;
  }
 }
