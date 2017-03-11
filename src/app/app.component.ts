@@ -8,13 +8,12 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 
-
-
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: '<grabName></grabName>',
   styleUrls: ['./app.component.css'],
   providers: [SummonerService, matchDetailService]
+
 })
 export class AppComponent implements OnInit {
   errorMessage : string;
@@ -24,13 +23,14 @@ export class AppComponent implements OnInit {
  public summonerArray: ISummoner;
  details: matchDetail;
   title= 'Summoners Details';
-
   ngOnInit(): void {
 
     this.getSummoners();
     this.getMatchDetails();
     
   }
+
+  
 
   getSummoners(): void {
      this.summonerService.getSummoners()

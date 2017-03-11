@@ -6,3 +6,10 @@ export interface ISummoner {
   summonerLevel: number;
   
 }
+
+export class Summoner {
+
+  constructor(
+    public name: string
+  ) { }
+}
