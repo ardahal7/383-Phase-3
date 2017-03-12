@@ -4,6 +4,7 @@ import { SummonerService } from './summoner.service';
 import { Observable } from 'rxjs/Observable';
 import {matchDetailService} from './match-detail.service';
 import {matchDetail} from './matchDetail';
+
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
@@ -17,30 +18,28 @@ import 'rxjs/add/operator/map';
 })
 export class AppComponent implements OnInit {
   errorMessage : string;
-  
+  name: string;
   constructor(private summonerService: SummonerService, private matchDetailService: matchDetailService) { }
  public  selectedSummoner: ISummoner;
  public summonerArray: ISummoner;
+ 
  details: matchDetail;
   title= 'Summoners Details';
   ngOnInit(): void {
 
-    this.getSummoners();
     this.getMatchDetails();
     
   }
 
-  
-
-  getSummoners(): void {
-     this.summonerService.getSummoners()
+  getSummoners(name: string): void {
+     this.summonerService.getSummoners(name)
                      .subscribe(
                        res =>{
-                        this.summonerArray=res;
+                        this.summonerArray=res; 
                         console.log(res);  
-                        error =>  this.errorMessage = <any>error;              
-                      })
-                      
+                        error =>  this.errorMessage = <any>error;   
+                                 
+                      })                     
                      
   }
   getMatchDetails(): void {
