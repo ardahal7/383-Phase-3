@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import { ISummoner } from './summoner';
-import { SummonerService } from './summoner.service';
+import { ISummoner } from './summoner/summoner';
+import { SummonerService } from './summoner/summoner.service';
 import { Observable } from 'rxjs/Observable';
 import {matchDetailService} from './match-detail.service';
 import {matchDetail} from './matchDetail';

@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { GrabNameComponent } from './grabName.component';
-import { SummonerDetailComponent } from './summoner-detail.component';
-import { SummonerService }  from './summoner.service';
+import { SummonerComponent } from './summoner/summoner.component';
+import { SummonerService }  from './summoner/summoner.service';
 import {matchDetailService} from './match-detail.service';
 import { AlertModule } from 'ng2-bootstrap';
 import {MatchDetailComponent} from './match-detail.component';
@@ -22,7 +22,7 @@ import {MatchDetailComponent} from './match-detail.component';
   declarations: [
     AppComponent,
     GrabNameComponent,
-    SummonerDetailComponent,
+    SummonerComponent,
     MatchDetailComponent
     
   ],

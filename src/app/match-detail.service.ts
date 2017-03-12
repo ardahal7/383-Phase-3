@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { matchDetail } from './matchDetail';
-import {SummonerService} from './summoner.service';
+import {SummonerService} from './summoner/summoner.service';
 import { Http, Response } from '@angular/http';
 import { Headers } from '@angular/http';
 import { Request, RequestOptions } from '@angular/http';

@@ -1,33 +1,33 @@
+import { ISummoner } from '../summoner/summoner';
 import { Injectable } from '@angular/core';
-import { ISummoner } from './summoner';
-import {AppComponent} from './app.component';
-import {apiKey} from './api-key';
 import { Http, Response } from '@angular/http';
 import { Headers } from '@angular/http';
 import { Request, RequestOptions } from '@angular/http'
+import {apiKey} from '../api-key';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-
 export class SummonerService {
   public myApiKey = apiKey.key;
   constructor(private http: Http) { }
 
   mode = 'Observable';
   
-  summoner: ISummoner;
- getSummoners(name: string): Observable<ISummoner> {
+  summonerMap: Map<string, ISummoner>;
+ getSummoners(name: string): Observable<Map<string,ISummoner>> {
+    console.log("test1");
+    console.log('test2');
     return this.http.get('https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'+ name + '?api_key=' + this.myApiKey)
     .map(this.extractData).catch(this.handleError); 
    
   }
 
   private extractData(res: Response) {
-    console.log(res);
-    let body = res.json();
-    return body || {};
+      console.log('test3');
+    this.summonerMap = res.json();
+    return this.summonerMap || {};
     
   }
 

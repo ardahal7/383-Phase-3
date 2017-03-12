@@ -4,7 +4,6 @@ export interface ISummoner {
   profileIconId: number;
   revisionDate: number;
   summonerLevel: number;
-  
 }
 
 export class Summoner {
