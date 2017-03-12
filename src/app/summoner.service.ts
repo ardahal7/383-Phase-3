@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ISummoner } from './summoner';
-
+import {AppComponent} from './app.component';
+import {apiKey} from './api-key';
 import { Http, Response } from '@angular/http';
 import { Headers } from '@angular/http';
 import { Request, RequestOptions } from '@angular/http'
-import {GrabNameComponent} from './grabName.component';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -12,15 +12,14 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class SummonerService {
-  
-  public testingName: string = "Aayush";
+  public myApiKey = apiKey.key;
   constructor(private http: Http) { }
 
   mode = 'Observable';
   
   summoner: ISummoner;
  getSummoners(name: string): Observable<ISummoner> {
-    return this.http.get('https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'+ name + '?api_key=RGAPI-6183b5c3-47f1-48e3-a2da-a0736b7695fb')
+    return this.http.get('https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'+ name + '?api_key=' + this.myApiKey)
     .map(this.extractData).catch(this.handleError); 
    
   }

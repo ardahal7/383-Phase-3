@@ -21,10 +21,11 @@ constructor(private summonerservice: SummonerService, private appcomponent: AppC
 
   onSubmit() { this.submitted = true; }
 
-  setSummonerName(name: string): void
+  searchSummoner(name: string): void
   {
     //Calling the getSummoners method of the App Component which receives the response from the observable of getSummoners in Summoner.Service
     this.appcomponent.getSummoners(name);
+    
   }
     submitted = false;
 

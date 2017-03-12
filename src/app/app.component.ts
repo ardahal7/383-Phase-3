@@ -11,23 +11,22 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-root',
-  template: '<grabName></grabName>',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [SummonerService, matchDetailService]
 
 })
 export class AppComponent implements OnInit {
+  
   errorMessage : string;
   name: string;
   constructor(private summonerService: SummonerService, private matchDetailService: matchDetailService) { }
- public  selectedSummoner: ISummoner;
- public summonerArray: ISummoner;
+  public  selectedSummoner: ISummoner;
+  public summonerArray: ISummoner;
  
- details: matchDetail;
+ 
   title= 'Summoners Details';
   ngOnInit(): void {
-
-    this.getMatchDetails();
     
   }
 
@@ -36,23 +35,13 @@ export class AppComponent implements OnInit {
                      .subscribe(
                        res =>{
                         this.summonerArray=res; 
-                        console.log(res);  
+                        console.log(res); 
                         error =>  this.errorMessage = <any>error;   
                                  
                       })                     
                      
   }
-  getMatchDetails(): void {
-     this.matchDetailService.getMatchDetails()
-                     .subscribe(
-                       res =>{
-                        this.details=res;
-                        console.log(res);
-                        error => this.errorMessage = <any>error;
-                        })
-                  
-  }
-
+  
  onSelect(summoner: ISummoner): void{
    this.selectedSummoner=summoner;
  }

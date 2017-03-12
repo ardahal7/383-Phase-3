@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { matchDetail } from './matchDetail';
-
+import {SummonerService} from './summoner.service';
 import { Http, Response } from '@angular/http';
 import { Headers } from '@angular/http';
-import { Request, RequestOptions } from '@angular/http'
+import { Request, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -12,12 +12,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class matchDetailService {
-  
-  private matchDetailsUrl = 'https://na.api.pvp.net/api/lol/na/v2.2/match/2407496373?api_key=RGAPI-6183b5c3-47f1-48e3-a2da-a0736b7695fb';  /*Gets Match Details from matchID*/
-
+ 
   mode = 'Observable';
-  constructor(private http: Http) { }
-
+  constructor(private http: Http, public summonerservice: SummonerService) { }
+  private matchDetailsUrl = 'https://na.api.pvp.net/api/lol/na/v2.2/match/2407496373?api_key=' + this.summonerservice.myApiKey;  /*Gets Match Details from matchID*/
   getMatchDetails(): Observable<matchDetail> {
     return  this.http.get(this.matchDetailsUrl).map(this.extractData).catch(this.handleError); 
    

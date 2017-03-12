@@ -8,19 +8,22 @@ import { GrabNameComponent } from './grabName.component';
 import { SummonerDetailComponent } from './summoner-detail.component';
 import { SummonerService }  from './summoner.service';
 import {matchDetailService} from './match-detail.service';
-
+import { AlertModule } from 'ng2-bootstrap';
+import {MatchDetailComponent} from './match-detail.component';
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    AlertModule.forRoot(),
     FormsModule,
     HttpModule
   ],
   declarations: [
     AppComponent,
     GrabNameComponent,
-    SummonerDetailComponent
+    SummonerDetailComponent,
+    MatchDetailComponent
     
   ],
   providers: [SummonerService, matchDetailService],
