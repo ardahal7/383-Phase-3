@@ -1,6 +1,10 @@
- div {
+    div {
         border: 2px solid blue;
         border-radius: 8px;
         display: inline-block;
         padding: 5px 5px 5px 5px
     }
+    tr {
+        border: 2px solid blue;
+    }
+   

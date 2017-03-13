@@ -7,10 +7,10 @@ import { AppComponent } from './app.component';
 import { GrabNameComponent } from './grabName.component';
 import { SummonerComponent } from './summoner/summoner.component';
 import { SummonerService }  from './summoner/summoner.service';
-import {matchDetailService} from './match-detail.service';
+import {matchDetailService} from './matchdetail/matchdetail.service';
 import { AlertModule } from 'ng2-bootstrap';
-import {MatchDetailComponent} from './match-detail.component';
 import { MatchComponent } from './match/match.component';
+import { MatchdetailComponent } from './matchdetail/matchdetail.component';
 
 @NgModule({
   imports: [
@@ -23,8 +23,8 @@ import { MatchComponent } from './match/match.component';
     AppComponent,
     GrabNameComponent,
     SummonerComponent,
-    MatchDetailComponent,
-    MatchComponent
+    MatchComponent,
+    MatchdetailComponent
   ],
   providers: [SummonerService, matchDetailService, MatchService],
   bootstrap: [AppComponent]

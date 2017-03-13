@@ -1,23 +1,26 @@
-
-<div *ngFor= "let Amatchlist of Amatchlist">
-    <label>Champion: </label>{{Amatchlist?.champion}}
-    <br>
-    <label>Lane: </label>{{Amatchlist?.lane}}
-    <br>
-    <label>MatchID: </label>{{Amatchlist?.matchId}}
-    <br>
-    <label>PlatformID: </label>{{Amatchlist?.platformId}}
-    <br>
-    <label>Queue: </label>{{Amatchlist?.queue}}
-    <br>
-    <label>Region: </label>{{Amatchlist?.region}}
-    <br>
-    <label>Role: </label>{{Amatchlist?.role}}
-    <br>
-    <label>Season: </label>{{Amatchlist?.season}}
-    <br>
-    <label>Timestamp: </label>{{Amatchlist?.timestamp}}
-    <br>
-</div>
+<table>
+        <tr *ngFor= "let Amatchlist of Amatchlist">
+            <label>Champion: </label>{{Amatchlist?.champion}}
+            <br>
+            <label>Lane: </label>{{Amatchlist?.lane}}
+            <br>
+            <label>MatchID: </label>{{Amatchlist?.matchId}}
+            <br>
+            <label>PlatformID: </label>{{Amatchlist?.platformId}}
+            <br>
+            <label>Queue: </label>{{Amatchlist?.queue}}
+            <br>
+            <label>Region: </label>{{Amatchlist?.region}}
+            <br>
+            <label>Role: </label>{{Amatchlist?.role}}
+            <br>
+            <label>Season: </label>{{Amatchlist?.season}}
+            <br>
+            <label>Timestamp: </label>{{Amatchlist?.timestamp}}
+            <br>
+            <br>
+        </tr>
+        <br>
+</table>
 <br>
 
