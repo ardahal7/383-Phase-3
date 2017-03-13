@@ -1,4 +1,4 @@
-import { IMatchList } from './matchlist';
+import { IMatchList } from './match';
 import { Injectable } from '@angular/core';
 import { ISummoner } from '../summoner/summoner';
 import { Http, Response } from '@angular/http';
@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class MatchListService {
+export class MatchService {
     private matchListUrl = 'https://na.api.pvp.net/api/lol/na/v2.2/matchlist/by-summoner/33989732?beginIndex=0&endIndex=10&api_key=RGAPI-5b3804ed-eb7e-4f75-8e69-cee241d9b62b'
     mode = 'Observable';
     constructor(private http: Http) { }

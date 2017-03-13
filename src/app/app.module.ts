@@ -1,8 +1,8 @@
+import { MatchService } from './match/match.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { GrabNameComponent } from './grabName.component';
 import { SummonerComponent } from './summoner/summoner.component';
@@ -10,7 +10,7 @@ import { SummonerService }  from './summoner/summoner.service';
 import {matchDetailService} from './match-detail.service';
 import { AlertModule } from 'ng2-bootstrap';
 import {MatchDetailComponent} from './match-detail.component';
-
+import { MatchComponent } from './match/match.component';
 
 @NgModule({
   imports: [
@@ -23,10 +23,10 @@ import {MatchDetailComponent} from './match-detail.component';
     AppComponent,
     GrabNameComponent,
     SummonerComponent,
-    MatchDetailComponent
-    
+    MatchDetailComponent,
+    MatchComponent
   ],
-  providers: [SummonerService, matchDetailService],
+  providers: [SummonerService, matchDetailService, MatchService],
   bootstrap: [AppComponent]
  
 })

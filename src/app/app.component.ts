@@ -1,6 +1,7 @@
-import { MatchListComponent } from './match-list/match-list.component';
-import { IMatchList } from './match-list/matchlist';
-import { MatchListService } from './match-list/match-list.service';
+
+import { MatchComponent } from './match/match.component';
+import { IMatchList } from './match/match';
+import { MatchService } from './match/match.service';
 import { Component, OnInit } from '@angular/core';
 import { ISummoner } from './summoner/summoner';
 import { SummonerService } from './summoner/summoner.service';
@@ -15,18 +16,19 @@ import 'rxjs/add/operator/map';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [SummonerService, matchDetailService, MatchListService]
+  providers: [SummonerService, matchDetailService, MatchService]
 
 })
 export class AppComponent implements OnInit {
   
   errorMessage : string;
   name: string;
-  constructor(private summonerService: SummonerService, private MLService: MatchListService) { }
+  constructor(private summonerService: SummonerService, private MLService: MatchService) { }
   public  selectedSummoner: ISummoner;
-  public summonerArray: ISummoner;
+  public mysummoner: ISummoner;
   summonerMap: Map<string, ISummoner>;
-  matchlist: IMatchList;
+  mymatchlist: IMatchList;
+  match: IMatchList[];
   title= 'Summoners Details';
   ngOnInit(): void {
     
@@ -37,19 +39,23 @@ export class AppComponent implements OnInit {
                 .subscribe(
                   Response =>{
                     this.summonerMap = Response;
-                    console.log('test5');
-                    console.log(this.summonerMap.get(`'`+name+`'`).id);
+                    this.mysummoner = this.summonerMap[name];
+                    this.getMatches(this.mysummoner.id);
+                    //console.log('test5');
+                    // console.log(this.summonerMap[name].name);
+                    //console.log(this.mysummoner.summonerLevel);
                   }
                   
                 )
   }
-  getMatches(): void {
+  getMatches(id: number): void {
      this.MLService.getMatches()
                 .subscribe(
                   Response =>{
-                    this.matchlist=Response;
-                    console.log(Response[0]);
-                    return this.matchlist[0];
+                    this.mymatchlist=Response;
+                    console.log(Response);
+                    console.log('test');
+                    //return this.matchlist[0];
                   }
                 )
   }

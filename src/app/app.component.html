@@ -3,7 +3,13 @@
 <alert type="success">hello</alert>
 <grabName></grabName>
 <match-detail></match-detail>
-<app-summoner [summoner]= "summonerMap"></app-summoner>
-<!--<summoner-detail [summoner]="selectedSummoner"></summoner-detail>-->
+<div>
+<app-summoner [summoner]= "mysummoner"></app-summoner>
+</div>
+<br>
+<div>
+<app-match [Amatchlist]="mymatchlist"></app-match>
+</div>
+
 
 

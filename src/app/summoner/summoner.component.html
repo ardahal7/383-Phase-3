@@ -1,6 +1,7 @@
 
 <div *ngIf="summoner">
-      <h2>{{summoner.name}} details!</h2>
-      <div><label>id: </label>{{summoner.id}}</div>
-      
+      <h2>{{summoner?.name}} details!</h2>
+      <label>Level: </label>{{summoner?.summonerLevel}}
+      <br>
+      <label>Profile Icon: </label>{{summoner?.profileIconId}}
 </div>

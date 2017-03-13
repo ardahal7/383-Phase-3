@@ -8,5 +8,5 @@ import { Summoner } from './summoner';
 })
 export class SummonerComponent {
     @Input()
-    summoner: ISummoner;
+    summoner: Map<string, ISummoner>;
 }
