@@ -25,3 +25,11 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## The Background image with logo 
+ * Save the bg-main-o2.jpg image into your assets folder
+ * Open your index.html file
+ * In your Body Tag, place the background ="file/path/image/name.jpg> 
+ * Example: <body background="assets/bg-main-02.jpg">
+
+![bg-main-02.jpg](https://bitbucket.org/repo/k84LKE/images/1442302465-bg-main-02.jpg)
