@@ -4,7 +4,7 @@
             <br>
             <label>Lane: </label>{{Amatchlist?.lane}}
             <br>
-            <label>MatchID: </label>{{Amatchlist?.matchId}}
+            <label>MatchID: </label>{{Amatchlist?.matchId}} <button type="submit" class="button" (click)="getMatchDetails(Amatchlist?.matchId)">View Details</button>
             <br>
             <label>PlatformID: </label>{{Amatchlist?.platformId}}
             <br>
@@ -20,6 +20,7 @@
             <br>
             <br>
         </tr>
+        <app-matchdetail [receivedDetails]="details"></app-matchdetail>
         <br>
 </table>
 <br>

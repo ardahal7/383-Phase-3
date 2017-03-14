@@ -1,4 +1,4 @@
-import { matchDetailService } from './matchdetail.service';
+//import { matchDetailService } from './matchdetail.service';
 import { matchDetail } from './matchDetail';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -9,11 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MatchdetailComponent {
     @Input()
-    details: Map<string, matchDetail>;   
+    receivedDetails: matchDetail;   
 
  /* viewDetails(): void{
       this.getMatchDetails();
      //console.log(this.details.matchType);
   }
   */
+ 
 }

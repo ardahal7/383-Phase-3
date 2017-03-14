@@ -17,8 +17,7 @@ export class SummonerService {
   
   summonerMap: Map<string, ISummoner>;
  getSummoners(name: string): Observable<Map<string,ISummoner>> {
-    console.log("test1");
-    console.log('test2');
+    
     return this.http.get('https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'+ name + '?api_key=' + this.myApiKey)
     .map(this.extractData).catch(this.handleError); 
    

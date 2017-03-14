@@ -1,5 +1,4 @@
-import { matchDetailService } from './matchdetail/matchdetail.service';
-import { matchDetail } from './matchdetail/matchDetail';
+import { matchDetail } from './match/matchDetail';
 import { MatchComponent } from './match/match.component';
 import { IMatchList } from './match/match';
 import { MatchService } from './match/match.service';
@@ -15,20 +14,21 @@ import 'rxjs/add/operator/map';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [SummonerService, matchDetailService, MatchService]
+  providers: [SummonerService, MatchService]
 
 })
 export class AppComponent implements OnInit {
   
   errorMessage : string;
   name: string;
-  constructor(private summonerService: SummonerService, private MLService: MatchService, private MDetService: matchDetailService) { }
+  constructor(private summonerService: SummonerService, private MLService: MatchService, /*private MDetService: matchDetailService*/) { }
   public  selectedSummoner: ISummoner;
   public mysummoner: ISummoner;
   summonerMap: Map<string, ISummoner>;
   mymatchlist: IMatchList;
   match: IMatchList[];
   detailsMap: Map<string, matchDetail>;
+  public details: matchDetail;
   tmpMatchID: number;
   mySummonerID: number;
   title= 'Summoners Details';
@@ -44,12 +44,10 @@ export class AppComponent implements OnInit {
                     this.summonerMap = Response;
                     this.mysummoner = this.summonerMap[name];
                     this.mySummonerID = this.mysummoner.id;
-                    console.log('this is my summoner ID:')
+                    
                     console.log(this.mySummonerID);
                     this.getMatches(this.mysummoner.id);
-                    //console.log('test5');
-                    // console.log(this.summonerMap[name].name);
-                    //console.log(this.mysummoner.summonerLevel);
+                    
                   }
                   
                 )
@@ -59,26 +57,13 @@ export class AppComponent implements OnInit {
                 .subscribe(
                   Response =>{
                     this.mymatchlist=Response;
-                    this.tmpMatchID = this.mymatchlist[0].matchId;
-                    this.getMatchDetails(this.tmpMatchID);
-                    console.log(Response);
-                    console.log('test');
-                    //return this.matchlist[0];
+                                       
                   }
                 )
   }
-  getMatchDetails(matchID: number): void {
-     this.MDetService.getMatchDetails(matchID)
-                     .subscribe(
-                       res =>{
-                        this.detailsMap=res;
-                        //this.detailsMap.matchType = res.matchType;
-                        ///console.log(this.detailsMap['participantIdentities'][0]['player']);
-                        console.log(this.detailsMap)
-                        this.findSummoner(this.mySummonerID);
-                        error => this.errorMessage = <any>error;
-                        })
-                  
+  
+  printMatchID(): void{
+    console.log("this is mapid. " + this.details.mapId);
   }
  onSelect(summoner: ISummoner): void{
    this.selectedSummoner=summoner;
@@ -86,9 +71,9 @@ export class AppComponent implements OnInit {
 
  findSummoner(summonerId: number){
     for(this.i=0; this.i<10; this.i++){
-        if(summonerId == this.detailsMap['participantIdentities'][this.i]['player'].summonerId){
-            console.log(this.detailsMap['participantIdentities'][this.i]['player'].summonerId);
-            console.log(this.detailsMap['participants'][this.i]['stats'].kills);
+        if(summonerId == this.details['participantIdentities'][this.i]['player'].summonerId){
+            console.log(this.details['participantIdentities'][this.i]['player'].summonerId);
+            console.log(this.details['participants'][this.i]['stats'].kills);
         }
     }
  }

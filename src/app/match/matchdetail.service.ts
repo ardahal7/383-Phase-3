@@ -14,17 +14,18 @@ import 'rxjs/add/operator/map';
 export class matchDetailService {
   public myApiKey = apiKey.key;
   mode = 'Observable';
-  matchDetailMap: Map<string, matchDetail>
   constructor(private http: Http, public summonerservice: SummonerService) { }
-  getMatchDetails(matchID: number): Observable<Map<string, matchDetail>> {
-    return  this.http.get('https://na.api.pvp.net/api/lol/na/v2.2/match/'+matchID+'?api_key=' + this.myApiKey)
-    .map(this.extractData).catch(this.handleError); 
+  
+  getMatchDetails(matchID: number): Observable<matchDetail> {
+     return  this.http.get('https://na.api.pvp.net/api/lol/na/v2.2/match/'+matchID+'?api_key=' + this.myApiKey)
+     .map(this.extractData).catch(this.handleError); 
    
-  }
+   }
 
   private extractData(res: Response) {
-    this.matchDetailMap = res.json();
-    return this.matchDetailMap || {};  
+    
+     let body = res.json();
+     return body || {};  
   }
 
   private handleError(error: Response | any) {
