@@ -1,7 +1,22 @@
 
- <div *ngIf="receivedDetails">
-      <h2>{{receivedDetails.matchDuration}} duration</h2>
-      
+ <div *ngIf="receivedDetails" class="table-responsive">
+       <table class="table-striped" border="1px">
+            <tr>
+                 <td> <h4>Match ID: {{receivedDetails.matchId}}</h4></td>
+            </tr>
+            <tr>
+                 <td> <h4>Map Id: {{receivedDetails.mapId}}</h4></td>
+            </tr>
+            <tr>
+                 <td> <h4>Match Duration: {{receivedDetails.matchDuration}}</h4></td>
+            </tr>
+            <tr>
+                 <td> <h4>Match Version: {{receivedDetails.matchVersion}}</h4></td>
+            </tr>
+            <tr>
+                 <td> <h4>Match Mode: {{receivedDetails.matchMode}}</h4></td>
+            </tr>
+       </table>
 </div>
  
 

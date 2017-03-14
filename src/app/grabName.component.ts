@@ -3,6 +3,7 @@ import { Summoner } from './summoner/summoner';
 import { SummonerService } from './summoner/summoner.service';
 import {AppComponent} from './app.component';
 import { ISummoner } from './summoner/summoner';
+import {FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
   // moduleId: module.id,
@@ -15,7 +16,8 @@ export class GrabNameComponent {
  errorMessage: string;
  summonerArray: ISummoner;
   
-constructor(private summonerservice: SummonerService, private appComp: AppComponent) { }
+constructor(private summonerservice: SummonerService, private appComp: AppComponent, ) { }
+
   model = new Summoner('');
   
 
@@ -28,6 +30,5 @@ constructor(private summonerservice: SummonerService, private appComp: AppCompon
     this.appComp.getSummoners(name);
     
   }
-    submitted = false;
-
+  submitted=false;
 }

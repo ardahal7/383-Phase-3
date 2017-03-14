@@ -1,5 +1,7 @@
+
 <table>
         <tr *ngFor= "let Amatchlist of Amatchlist">
+           
             <label>Champion: </label>{{Amatchlist?.champion}}
             <br>
             <label>Lane: </label>{{Amatchlist?.lane}}
@@ -19,9 +21,11 @@
             <label>Timestamp: </label>{{Amatchlist?.timestamp}}
             <br>
             <br>
+           
         </tr>
+        
         <app-matchdetail [receivedDetails]="details"></app-matchdetail>
         <br>
 </table>
-<br>
+
 

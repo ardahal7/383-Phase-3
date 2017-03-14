@@ -39,6 +39,7 @@ export class AppComponent implements OnInit {
   
   getSummoners(name: string): void {
      this.summonerService.getSummoners(name)
+     
                 .subscribe(
                   Response =>{
                     this.summonerMap = Response;
@@ -48,9 +49,15 @@ export class AppComponent implements OnInit {
                     console.log(this.mySummonerID);
                     this.getMatches(this.mysummoner.id);
                     
+                  },
+                  error=>{
+                    this.errorMessage = "Object Not Found";
+                    
+                    console.log(this.errorMessage);
                   }
-                  
-                )
+                  )
+                
+      
   }
   getMatches(id: number): void {
      this.MLService.getMatches()

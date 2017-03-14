@@ -1,15 +1,19 @@
  <h1>{{title}}</h1>
  
-<alert type="success">hello</alert>
+<alert type="success">Welcome to the Summoner Search!</alert>
 <grabName></grabName>
-<div>
+
+<div id="summoner" *ngIf="mysummoner">
 <app-summoner [summoner]= "mysummoner"></app-summoner>
 </div>
+
+<div *ngIf="errorMessage">
+<p>Error. Summoner Not Found</p>
+</div>
+
 <br>
 <div>
 <app-match [Amatchlist]="mymatchlist"></app-match>
-</div>
-<div>
 </div>
 
 

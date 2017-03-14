@@ -1,23 +1,29 @@
  
     <div class="container">
       <div [hidden]="submitted">
-        <form (ngSubmit)="onSubmit()" #grabName="ngForm">
+        <form id="myForm" (ngSubmit)="onSubmit()" #grabName="ngForm">
           <div class="form-group">
-            <label for="name">Summoner Name</label>
-            <input type="text" class="form-control" id="name" required name="name"
+            <label for="name">Summoner&#39;s Name</label>
+            <div class="col-6">
+            <input type="text" class="form-control" placeholder="Enter Summoner's Name" id="name" required name="name"
             [(ngModel)]="model.name" name="name">
-          </div>
+            </div>
+            <br/>
           <button type="submit" class="btn btn-success" (click)="searchSummoner(model.name)">Search</button>
+          </div>
         </form>
     </div> 
 </div>
     
 <div [hidden]="!submitted">
   <h2>You submitted the following:</h2>
-  <div class="row">
-    <div class="col-xs-3">Name</div>
-    <div class="col-xs-9  pull-left">{{ model.name }}</div>
-  
-  <br>
+  <div class="row-fluid">
+    <div class="col-xs-3">Name: {{ model.name }}</div>
+  <br/>
+  </div>
+  <div>
   <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  <br/>
 </div>
+
+
