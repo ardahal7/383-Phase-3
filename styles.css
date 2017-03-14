@@ -1,0 +1,189 @@
+/* Global css page for HTML files */
+
+
+/* Footer */
+
+.footer-centered {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font: normal 18px sans-serif;
+    padding: 45px;
+    margin-top: 80px;
+}
+
+.footer-centered .footer-company {
+    color: #8d9093;
+    font-size: 24px;
+    margin: 0;
+}
+
+.footer-centered .footer-name {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-centered .footer-links {
+    list-style: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 35px 0 23px;
+    margin: 0;
+}
+
+.footer-centered .footer-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Responsive Footer */
+
+@media (max-width: 600px) {
+    .footer-centered {
+        padding: 35px;
+    }
+    .footer-centered .footer-company {
+        font-size: 18px;
+    }
+    .footer-basic-centered .footer-name {
+        font-size: 12px;
+    }
+    .footer-centered .footer-links {
+        font-size: 14px;
+        padding: 25px 0 20px;
+    }
+    .footer-centered .footer-links a {
+        line-height: 1.8;
+    }
+}
+
+
+/* Body Styling */
+
+.page {
+    -webkit-align-self: center;
+    /* Safari 7.0+ */
+    align-self: center;
+    background-color: grey;
+    padding: inherit;
+    font-family: Arial, Verdana, sans-serif;
+    color: #665544;
+}
+
+.head {
+    position: relative;
+    color: #efefef;
+}
+
+.container {
+    position: relative;
+    background-color: grey;
+    overflow: scroll;
+}
+
+.center {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+img {
+    -webkit-align-self: center;
+    /* Safari 7.0+ */
+    align-self: center;
+    position: static;
+    left: 5px;
+    top: 0px;
+    z-index: -1;
+}
+
+div.container {
+    width: 100%;
+    border: 5px solid grey;
+}
+
+.modelName {
+    margin-left: 170px;
+    /*border-left: 1px solid gray;*/
+    padding: 1em;
+}
+
+div.load {
+    -webkit-align-self: center;
+    /* Safari 7.0+ */
+    align-self: center;
+    color: black;
+    margin: 10px 2px 5px 10px;
+    padding: 10px;
+}
+
+div.submit {
+    -webkit-align-self: center;
+    /* Safari 7.0+ */
+    align-self: center;
+    background-color: #000000;
+    color: black;
+    margin: 10px 0 10px 0;
+    padding: 5px;
+}
+
+div {
+    display: -webkit-flex;
+    /* Safari */
+    -webkit-justify-content: space-around;
+    /* Safari 6.1+ */
+    display: flex;
+    justify-content: space-around;
+}
+
+#main {
+    width: 200px;
+    height: 200px;
+    /*border: 1px solid #c3c3c3;*/
+    display: -webkit-flex;
+    /* Safari */
+    -webkit-flex-flow: row-reverse wrap;
+    /* Safari 6.1+ */
+    display: flex;
+    flex-flow: row-reverse wrap;
+}
+
+#main div {
+    width: 50px;
+    height: 50px;
+}
+
+h2 {
+    position: static;
+    left: 100px;
+    top: 150px;
+}
+
+
+/* Search Bar */
+
+app-root {
+    -webkit-align-self: center;
+    /* Safari 7.0+ */
+    align-self: center;
+    margin: auto;
+    position: static;
+    font-family: "Times New Roman", Georgia, Serif;
+    color: #000000;
+    overflow: scroll;
+}
