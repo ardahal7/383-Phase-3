@@ -32,4 +32,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  * In your Body Tag, place the background ="file/path/image/name.jpg> 
  * Example: <body background="assets/bg-main-02.jpg">
 
-![bg-main-02.jpg](https://bitbucket.org/repo/k84LKE/images/1442302465-bg-main-02.jpg)
+ * Background Image option #1:  
+![bg-main-04.jpg](https://bitbucket.org/repo/k84LKE/images/2687895982-bg-main-04.jpg)
+
+ * Background Image option #2:
+![bg-main-05.jpg](https://bitbucket.org/repo/k84LKE/images/2552834629-bg-main-05.jpg)
